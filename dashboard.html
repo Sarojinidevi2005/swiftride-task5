@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — SwiftRide Taxi Booking</title>
+  <meta name="description" content="Your SwiftRide customer dashboard — total bookings, upcoming trips, and booking statistics." />
+  <meta name="keywords" content="taxi dashboard, ride statistics, upcoming trips, customer account" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="author" content="SwiftRide Team" />
+  <link rel="canonical" href="https://www.swiftride.example.com/dashboard.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.swiftride.example.com/dashboard.html" />
+  <meta property="og:title" content="Dashboard — SwiftRide Taxi Booking" />
+  <meta property="og:description" content="Your SwiftRide customer dashboard — total bookings, upcoming trips, and booking statistics." />
+  <meta property="og:image" content="https://www.swiftride.example.com/assets/favicon.svg" />
+  <meta property="og:site_name" content="SwiftRide" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://www.swiftride.example.com/dashboard.html" />
+  <meta name="twitter:title" content="Dashboard — SwiftRide Taxi Booking" />
+  <meta name="twitter:description" content="Your SwiftRide customer dashboard — total bookings, upcoming trips, and booking statistics." />
+  <meta name="twitter:image" content="https://www.swiftride.example.com/assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="page-loader" id="pageLoader"><div class="loader-spin"></div></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="ph-fill ph-taxi"></i></span>
+        Swift<span>Ride</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
+        <li><a href="services.html" class="nav-link" data-page="services">Services</a></li>
+        <li><a href="fleet.html" class="nav-link" data-page="fleet">Fleet</a></li>
+        <li><a href="booking.html" class="nav-link" data-page="booking">Booking</a></li>
+        <li><a href="pricing.html" class="nav-link" data-page="pricing">Pricing</a></li>
+        <li><a href="testimonials.html" class="nav-link" data-page="testimonials">Testimonials</a></li>
+        <li><a href="faq.html" class="nav-link" data-page="faq">FAQ</a></li>
+        <li><a href="my-bookings.html" class="nav-link" data-page="mybookings">My Bookings</a></li>
+        <li><a href="dashboard.html" class="nav-link" data-page="dashboard">Dashboard</a></li>
+        <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+        <li><button class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="ph-fill ph-moon"></i></button></li>
+        <li><a href="booking.html" class="nav-cta-btn">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <section class="page-header" id="main-content">
+    <div class="container page-header-content">
+      <span class="section-badge">Your Overview</span>
+      <h1>Customer <span>Dashboard</span></h1>
+      <p>A quick snapshot of your rides, trends, and favourite vehicle.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><i class="ph ph-caret-right"></i><span>Dashboard</span></div>
+    </div>
+  </section>
+
+  <section class="content-section dashboard-page" id="dashboardRoot">
+    <div class="container">
+      <div class="dash-grid">
+        <div class="dash-card">
+          <div class="dash-icon c1"><i class="ph-fill ph-clipboard-text"></i></div>
+          <div><div class="dash-value" id="dashTotal">0</div><div class="dash-label">Total Bookings</div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon c2"><i class="ph-fill ph-calendar-check"></i></div>
+          <div><div class="dash-value" id="dashUpcoming">0</div><div class="dash-label">Upcoming Trips</div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon c3"><i class="ph-fill ph-flag-checkered"></i></div>
+          <div><div class="dash-value" id="dashCompleted">0</div><div class="dash-label">Completed Trips</div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon c4"><i class="ph-fill ph-heart-straight"></i></div>
+          <div><div class="dash-value text" id="dashFavourite">—</div><div class="dash-label">Favourite Vehicle</div></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon c1"><i class="ph-fill ph-map-trifold"></i></div>
+          <div><div class="dash-value text" id="dashLastBooking">—</div><div class="dash-label">Last Booking</div></div>
+        </div>
+      </div>
+
+      <div class="dash-panels">
+        <div class="dash-panel">
+          <h3><i class="ph ph-chart-bar" style="color:var(--yellow-dark);"></i> Booking Statistics by Vehicle Type</h3>
+          <div id="dashStatsBars"></div>
+        </div>
+        <div class="dash-panel">
+          <h3><i class="ph ph-clock-counter-clockwise" style="color:var(--accent-dark);"></i> Recent Bookings</h3>
+          <div id="dashRecent"></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <a href="my-bookings.html" class="btn btn-outline"><i class="ph ph-clipboard-text"></i> View All Bookings</a>
+        <a href="booking.html" class="btn btn-primary" style="margin-left:14px;"><i class="ph ph-car-simple"></i> Book Another Ride</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="nav-logo footer-logo">
+            <span class="logo-icon"><i class="ph-fill ph-taxi"></i></span>
+            Swift<span>Ride</span>
+          </a>
+          <p>Your city's most trusted call taxi service. Safe, fast, and always on time — wherever you need to go.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html" data-page="home">Home</a></li>
+            <li><a href="about.html" data-page="about">About Us</a></li>
+            <li><a href="services.html" data-page="services">Services</a></li>
+            <li><a href="fleet.html" data-page="fleet">Our Fleet</a></li>
+            <li><a href="testimonials.html" data-page="testimonials">Testimonials</a></li>
+            <li><a href="faq.html" data-page="faq">FAQ</a></li>
+            <li><a href="contact.html" data-page="contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>My Account</h5>
+          <ul>
+            <li><a href="booking.html" data-page="booking">Book a Ride</a></li>
+            <li><a href="my-bookings.html" data-page="mybookings">My Bookings</a></li>
+            <li><a href="dashboard.html" data-page="dashboard">Dashboard</a></li>
+            <li><a href="pricing.html" data-page="pricing">Pricing &amp; Fare Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Info</h5>
+          <ul class="footer-contact-list">
+            <li><i class="ph ph-phone"></i> +91 98765 43210</li>
+            <li><i class="ph ph-envelope"></i> support@swiftride.in</li>
+            <li><i class="ph ph-map-pin"></i> 42, Anna Salai, Chennai</li>
+            <li><i class="ph ph-clock"></i> 24 / 7 Available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="footer-year">2026</span> SwiftRide Call Taxi. All rights reserved.</p>
+        <p>Designed with <i class="ph-fill ph-heart" style="color:#FFD700"></i> for every rider.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="ph ph-arrow-up"></i>
+  </button>
+
+  <!-- ===== SUCCESS TOAST (shared across all pages) ===== -->
+  <div class="toast" id="toast">
+    <i class="ph-fill ph-check-circle" id="toastIcon"></i>
+    <div>
+      <strong id="toastTitle">Success!</strong>
+      <span id="toastMsg">Your action was completed.</span>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

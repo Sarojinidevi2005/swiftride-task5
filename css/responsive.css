@@ -1,0 +1,196 @@
+/* ---------- TABLET (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  /* Responsive Booking Form: stack info + form vertically */
+  .booking-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .booking-info { order: -1; }
+
+  /* Responsive Hero: center content, stack visual card below text */
+  .hero { flex-direction: column; text-align: center; padding: 120px 24px 80px; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { order: -1; }
+
+  /* Responsive Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2)::after { display: none; }
+
+  .contact-form-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .contact-form-info { order: -1; }
+  .planner-card { padding: 28px; }
+
+  /* Responsive Cards: slightly tighter grids on tablets */
+  .services-grid, .why-grid, .testimonials-grid, .contact-grid, .drivers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery / Carousel: shorter slides on tablet */
+  .carousel-slide { aspect-ratio: 16 / 9; }
+  .carousel-caption { padding: 44px 26px 22px; }
+}
+
+/* ---------- MOBILE (≤768px) ---------- */
+@media (max-width: 768px) {
+  /* Responsive Booking Form */
+  .form-row { grid-template-columns: 1fr; }
+  .booking-form-card { padding: 28px 20px; }
+
+  /* Responsive Hero */
+  .hero h1 { font-size: 2rem; }
+  .taxi-card { min-width: auto; }
+
+  /* Responsive Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .contact-form-card { padding: 28px 20px; }
+  .planner-input-row { flex-wrap: wrap; padding: 14px; }
+  .planner-input-row input { width: 100%; order: 1; padding: 8px 0; }
+  .planner-input-icon { order: 0; }
+  .planner-input-row .btn { order: 2; width: 100%; justify-content: center; }
+  .planner-stats { gap: 10px; }
+  .planner-stat { flex: 1 1 auto; justify-content: center; }
+
+  /* Responsive Cards: single column on mobile */
+  .services-grid, .why-grid, .testimonials-grid, .contact-grid, .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery / Carousel: smaller nav buttons + tighter caption on mobile */
+  .carousel-slide { aspect-ratio: 4 / 3; }
+  .carousel-btn { width: 38px; height: 38px; font-size: 1rem; }
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+  .carousel-caption { padding: 34px 18px 18px; }
+  .carousel-caption span { font-size: 1.02rem; }
+  .carousel-caption p { font-size: 0.82rem; }
+
+  /* Drivers API section */
+  .driver-card { padding: 22px 16px; }
+}
+
+/* ---------- SMALL MOBILE (≤480px) ---------- */
+@media (max-width: 480px) {
+  .section-header { margin-bottom: 40px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { flex-direction: column; gap: 14px; }
+  .h-divider { display: none; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  .scroll-top { bottom: 20px; right: 16px; }
+  .toast { min-width: auto; width: calc(100vw - 48px); }
+  .planner-card { padding: 20px; }
+  .planner-item { padding: 12px; gap: 10px; }
+  .planner-text { font-size: 0.85rem; }
+  .planner-stat { font-size: 0.78rem; padding: 8px 14px; }
+
+  /* Gallery / Carousel: hide dots-and-arrows overlap risk, shrink caption further */
+  .carousel-slide { aspect-ratio: 1 / 1; }
+  .carousel-caption { padding: 26px 14px 16px; }
+  .carousel-dots { bottom: 10px; }
+
+  /* Drivers grid single column, tighter meta row */
+  .driver-meta { gap: 8px; font-size: 0.72rem; }
+}
+
+/* ============================================================
+   TASK-4 UPGRADE — ADDITIONAL RESPONSIVE RULES
+   ============================================================ */
+
+/* ---------- WIDE NAV (≤1200px): switch to hamburger earlier,
+   since Task-4 adds many more nav links ---------- */
+@media (max-width: 1200px) {
+  .hamburger { display: flex; }
+  .nav-menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 20px 24px 24px;
+    gap: 4px;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .nav-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+  .nav-link, .nav-cta-btn { width: 100%; text-align: left; border-radius: 8px; margin-left: 0; padding: 12px 14px; font-size: 0.92rem; }
+  .theme-toggle-btn { margin-left: auto; }
+}
+
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-grid .about-img { order: -1; }
+  .dash-panels { grid-template-columns: 1fr; }
+  .fleet-toolbar, .mybookings-toolbar { flex-direction: column; align-items: stretch; }
+  .fleet-filters { justify-content: stretch; }
+  .filter-select { flex: 1; }
+  .pricing-card.popular { transform: none; }
+  .pricing-card.popular:hover { transform: translateY(-6px); }
+}
+
+@media (max-width: 768px) {
+  .page-header { padding: 130px 0 56px; }
+  .booking-row-actions { justify-content: stretch; }
+  .booking-row-actions .btn { flex: 1; justify-content: center; }
+  .summary-actions { flex-direction: column; }
+  .summary-actions .btn { width: 100%; justify-content: center; }
+  .timeline { padding-left: 26px; }
+  .dash-grid { grid-template-columns: repeat(2, 1fr); }
+  .theme-toggle-btn { margin-left: 0; }
+  .nav-container { flex-wrap: wrap; }
+}
+
+@media (max-width: 480px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .fleet-grid { grid-template-columns: 1fr; }
+  .vehicle-footer { flex-direction: column; align-items: stretch; gap: 10px; }
+  .vehicle-footer .btn { width: 100%; justify-content: center; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   TASK-5 UPGRADE — MOBILE OPTIMIZATION & OVERFLOW SAFETY
+   ============================================================ */
+
+/* Guarantee no horizontal scroll/overflow on any screen size */
+html, body { max-width: 100%; overflow-x: hidden; }
+.container, section, .footer-grid, .services-grid, .fleet-grid,
+.dash-grid, .summary-grid { max-width: 100%; }
+img, video, iframe, table { max-width: 100%; height: auto; }
+
+/* Comfortable touch targets (WCAG 2.5.5 / mobile UX best practice)
+   on touch-capable devices, without altering the visual design on
+   pointer-driven (mouse) devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn, .nav-cta-btn, .card-link, .filter-select,
+  .theme-toggle-btn, .scroll-top, .carousel-btn,
+  .fleet-search input, button {
+    min-height: 44px;
+  }
+  .hamburger { min-width: 44px; min-height: 44px; }
+}
+
+/* Safe-area padding so content isn't hidden behind notches / home
+   indicators on modern iOS / Android devices */
+.footer, .page-loader {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+.scroll-top {
+  bottom: calc(30px + env(safe-area-inset-bottom));
+}
+
+/* Prevent iOS Safari auto-zoom on form focus (inputs must be >=16px) */
+@media (max-width: 768px) {
+  .form-group input, .form-group select, .form-group textarea,
+  .fleet-search input, .filter-select, .planner-input-row input,
+  #rideTaskInput {
+    font-size: 16px;
+  }
+}

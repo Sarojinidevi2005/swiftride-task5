@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /my-bookings.html
+Disallow: /dashboard.html
+
+Sitemap: https://www.swiftride.example.com/sitemap.xml

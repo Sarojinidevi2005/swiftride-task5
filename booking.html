@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Taxi — SwiftRide Taxi Booking</title>
+  <meta name="description" content="Book your SwiftRide taxi in seconds — instant booking ID, fare estimate and confirmation." />
+  <meta name="keywords" content="book taxi online, instant cab booking, taxi reservation, fare estimate" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="SwiftRide Team" />
+  <link rel="canonical" href="https://www.swiftride.example.com/booking.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.swiftride.example.com/booking.html" />
+  <meta property="og:title" content="Book a Taxi — SwiftRide Taxi Booking" />
+  <meta property="og:description" content="Book your SwiftRide taxi in seconds — instant booking ID, fare estimate and confirmation." />
+  <meta property="og:image" content="https://www.swiftride.example.com/assets/favicon.svg" />
+  <meta property="og:site_name" content="SwiftRide" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://www.swiftride.example.com/booking.html" />
+  <meta name="twitter:title" content="Book a Taxi — SwiftRide Taxi Booking" />
+  <meta name="twitter:description" content="Book your SwiftRide taxi in seconds — instant booking ID, fare estimate and confirmation." />
+  <meta name="twitter:image" content="https://www.swiftride.example.com/assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+</head>
+<body data-page="booking">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="page-loader" id="pageLoader"><div class="loader-spin"></div></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="ph-fill ph-taxi"></i></span>
+        Swift<span>Ride</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
+        <li><a href="services.html" class="nav-link" data-page="services">Services</a></li>
+        <li><a href="fleet.html" class="nav-link" data-page="fleet">Fleet</a></li>
+        <li><a href="booking.html" class="nav-link" data-page="booking">Booking</a></li>
+        <li><a href="pricing.html" class="nav-link" data-page="pricing">Pricing</a></li>
+        <li><a href="testimonials.html" class="nav-link" data-page="testimonials">Testimonials</a></li>
+        <li><a href="faq.html" class="nav-link" data-page="faq">FAQ</a></li>
+        <li><a href="my-bookings.html" class="nav-link" data-page="mybookings">My Bookings</a></li>
+        <li><a href="dashboard.html" class="nav-link" data-page="dashboard">Dashboard</a></li>
+        <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+        <li><button class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="ph-fill ph-moon"></i></button></li>
+        <li><a href="booking.html" class="nav-cta-btn">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <section class="page-header" id="main-content">
+    <div class="container page-header-content">
+      <span class="section-badge">Reserve a Ride</span>
+      <h1>Book Your <span>Taxi</span> Now</h1>
+      <p>Fill in the details below and your driver will be assigned instantly.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><i class="ph ph-caret-right"></i><span>Booking</span></div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="container">
+      <div class="booking-wrapper">
+        <div class="booking-info">
+          <span class="section-badge">Reserve a Ride</span>
+          <h2>Book Your <span>Taxi</span> Now</h2>
+          <p>Fill in the details below and your driver will be assigned instantly. We'll confirm within 2 minutes.</p>
+          <ul class="booking-perks">
+            <li><i class="ph-fill ph-check-circle"></i> No cancellation fee within 5 minutes</li>
+            <li><i class="ph-fill ph-check-circle"></i> Real-time GPS tracking</li>
+            <li><i class="ph-fill ph-check-circle"></i> Transparent fare — no hidden charges</li>
+            <li><i class="ph-fill ph-check-circle"></i> Driver contact shared immediately</li>
+          </ul>
+          <p style="margin-top:20px;font-size:0.85rem;">Need to compare vehicles first? <a href="fleet.html" style="color:var(--yellow-dark);font-weight:700;">Browse our fleet →</a></p>
+        </div>
+        <div class="booking-form-card">
+          <form id="bookingForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName"><i class="ph ph-user"></i> Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g. Arjun Sharma" />
+                <span class="error-msg" id="nameErr">Please enter your full name.</span>
+              </div>
+              <div class="form-group">
+                <label for="phone"><i class="ph ph-phone"></i> Mobile Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" inputmode="numeric" />
+                <span class="error-msg" id="phoneErr">Please enter a valid 10-digit mobile number.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickup"><i class="ph ph-map-pin"></i> Pickup Location</label>
+                <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" />
+                <span class="error-msg" id="pickupErr">Please enter pickup location.</span>
+              </div>
+              <div class="form-group">
+                <label for="drop"><i class="ph ph-navigation-arrow"></i> Drop Location</label>
+                <input type="text" id="drop" name="drop" placeholder="Enter drop address" />
+                <span class="error-msg" id="dropErr">Please enter drop location.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rideDate"><i class="ph ph-calendar"></i> Date</label>
+                <input type="date" id="rideDate" name="rideDate" />
+                <span class="error-msg" id="dateErr">Please select a date.</span>
+              </div>
+              <div class="form-group">
+                <label for="rideTime"><i class="ph ph-clock"></i> Time</label>
+                <input type="time" id="rideTime" name="rideTime" />
+                <span class="error-msg" id="timeErr">Please select a time.</span>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label for="taxiType"><i class="ph ph-car"></i> Vehicle Type</label>
+              <select id="taxiType" name="taxiType"></select>
+              <span class="error-msg" id="typeErr">Please select a vehicle type.</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="bookBtn">
+              <i class="ph ph-car-simple"></i> Confirm Booking
+            </button>
+          </form>
+
+          <!-- ===== BOOKING SUMMARY (shown after successful submission) ===== -->
+          <div class="booking-summary-card" id="bookingSummaryCard">
+            <div class="summary-head">
+              <div class="summary-icon"><i class="ph-fill ph-check-circle"></i></div>
+              <div>
+                <h3>Booking Confirmed!</h3>
+                <span class="summary-id" id="summaryId">SR-000000</span>
+              </div>
+            </div>
+            <div class="summary-grid">
+              <div class="summary-item"><span>Customer</span><strong id="summaryName">—</strong></div>
+              <div class="summary-item"><span>Mobile</span><strong id="summaryPhone">—</strong></div>
+              <div class="summary-item"><span>Pickup</span><strong id="summaryPickup">—</strong></div>
+              <div class="summary-item"><span>Drop</span><strong id="summaryDrop">—</strong></div>
+              <div class="summary-item"><span>Date</span><strong id="summaryDate">—</strong></div>
+              <div class="summary-item"><span>Time</span><strong id="summaryTime">—</strong></div>
+              <div class="summary-item"><span>Vehicle</span><strong id="summaryVehicle">—</strong></div>
+              <div class="summary-item"><span>Distance</span><strong id="summaryDistance">—</strong></div>
+              <div class="summary-item"><span>Base Fare</span><strong id="summaryBaseFare">—</strong></div>
+              <div class="summary-item"><span>Distance Charge</span><strong id="summaryPerKm">—</strong></div>
+            </div>
+            <div class="summary-fare">
+              <span class="summary-fare-label">Estimated Total Fare</span>
+              <span class="fare-total" id="summaryTotal">₹0</span>
+            </div>
+            <div style="margin-bottom:18px;">
+              <span class="status-badge status-confirmed" id="summaryStatus">Confirmed</span>
+            </div>
+            <div class="summary-actions">
+              <a href="my-bookings.html" class="btn btn-outline btn-sm"><i class="ph ph-clipboard-text"></i> View My Bookings</a>
+              <a href="dashboard.html" class="btn btn-ghost btn-sm"><i class="ph ph-gauge"></i> Go to Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="nav-logo footer-logo">
+            <span class="logo-icon"><i class="ph-fill ph-taxi"></i></span>
+            Swift<span>Ride</span>
+          </a>
+          <p>Your city's most trusted call taxi service. Safe, fast, and always on time — wherever you need to go.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html" data-page="home">Home</a></li>
+            <li><a href="about.html" data-page="about">About Us</a></li>
+            <li><a href="services.html" data-page="services">Services</a></li>
+            <li><a href="fleet.html" data-page="fleet">Our Fleet</a></li>
+            <li><a href="testimonials.html" data-page="testimonials">Testimonials</a></li>
+            <li><a href="faq.html" data-page="faq">FAQ</a></li>
+            <li><a href="contact.html" data-page="contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>My Account</h5>
+          <ul>
+            <li><a href="booking.html" data-page="booking">Book a Ride</a></li>
+            <li><a href="my-bookings.html" data-page="mybookings">My Bookings</a></li>
+            <li><a href="dashboard.html" data-page="dashboard">Dashboard</a></li>
+            <li><a href="pricing.html" data-page="pricing">Pricing &amp; Fare Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Info</h5>
+          <ul class="footer-contact-list">
+            <li><i class="ph ph-phone"></i> +91 98765 43210</li>
+            <li><i class="ph ph-envelope"></i> support@swiftride.in</li>
+            <li><i class="ph ph-map-pin"></i> 42, Anna Salai, Chennai</li>
+            <li><i class="ph ph-clock"></i> 24 / 7 Available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="footer-year">2026</span> SwiftRide Call Taxi. All rights reserved.</p>
+        <p>Designed with <i class="ph-fill ph-heart" style="color:#FFD700"></i> for every rider.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="ph ph-arrow-up"></i>
+  </button>
+
+  <!-- ===== SUCCESS TOAST (shared across all pages) ===== -->
+  <div class="toast" id="toast">
+    <i class="ph-fill ph-check-circle" id="toastIcon"></i>
+    <div>
+      <strong id="toastTitle">Success!</strong>
+      <span id="toastMsg">Your action was completed.</span>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
